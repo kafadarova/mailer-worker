@@ -29,10 +29,10 @@ function checkRepeatType(type, repeatDays = []) {
   */
   switch (type) {
     case 'daily':
-      // repeatType = 'days';
-      // rule.push('hour', 'minute');
-      repeatType = 'minutes'; // Just for testing
-      rule.push('second');
+      repeatType = 'days';
+      rule.push('hour', 'minute');
+      // repeatType = 'minutes'; // Just for testing
+      // rule.push('second');
       break;
     case 'weekly':
       repeatType = 'weeks';
