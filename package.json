@@ -8,7 +8,7 @@
     "heroku-postbuild": "npm install",
     "pretest": "eslint index.js controllers config test --ext .js --ext .json",
     "lint-fix": "eslint index.js controllers models --ext .js --ext .json --fix",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --verbose",
     "test-watch": "nodemon --exec \"npm test\""
   },
   "dependencies": {
