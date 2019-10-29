@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '10'
+dist: trusty
+sudo: required
+before_script:
+- npm install -g eslint
+- npm install --no-optional
+cache:
+  directories:
+  - node_modules
+env:
+- NODE_ENV=ci
+script:
+- sleep 5
+- npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: iG8vuPL9r8CWn7jYTGqcL+tGzGbtJB3dEfxoQ8PT5K1lr4qBAyCjWOrHWu1FvRzF0diwq797We9D9+rsV5ZDHn4178IIF7lxiUFDm6gG57ozadjOJmdls/EQ3YjFI/vrGHtGi1SO5nz1nO2nbz4WfQhm3YkVSsFdTwwK2y/iHuVMwwmTjYM49hZnxNrcm2URU+SuIE61auAXMSV54Jy69lKRq9Th4WXXGoj3s32eQLqYxB48Mm9Lv3Xwu0Qu9ieUQsLM3EBc/m+4OQYPwWxMl0CuPtn4/oTI7CgbVq4nXcQQP913YgNem+ZgmczzqLbnj+MrZ4wpkW+naNvu4+q6ShQjqWArZ/o2lkf2A/1s4clLzpzm8sDp/crgYlD/0aoSISf3yVthTqyWxjde4pKe91wlAb/GVq+NfT5XI4/r8XVFdKAozboGLaXuu7je/MgAueV4Nwi6Y2IbNAiWbGr2Ml2hdijNPoFmmI28sFarhCrRUPVrJwwMZnFOLYyXOaaCBIUGVMCYzNdfHHTDLclvjGEcLmeCkIDhSM1ZUHQr+kbVfrNdSLbENqKve+6S/cQArVm97yALDANBubtaDNql3sPuiOVEulRZw8SRbOpxGb0MV0z0XZPjeJIi6w+8u+bDTYGQgtZ72zNdNC0vNG4WIRWq0MRL0IWwKEpkv6Hizr4=
+  app: mail-worker
+  skip_cleanup: true
